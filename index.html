@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Circle Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .result {
+            margin-top: 20px;
+        }
+    </style>
+    <script>
+        function calculateCircle() {
+            const r = parseFloat(prompt("Masukkan jari-jari lingkaran: "));
+            if (!isNaN(r)) {
+                const luas = Math.PI * Math.pow(r, 2);
+                const keliling = 2 * Math.PI * r;
+                document.getElementById('luas').textContent = `Luas lingkaran: ${luas.toFixed(2)}`;
+                document.getElementById('keliling').textContent = `Keliling lingkaran: ${keliling.toFixed(2)}`;
+            } else {
+                alert("Masukkan nilai jari-jari yang valid.");
+            }
+        }
+    </script>
+</head>
+<body onload="calculateCircle()">
+    <h1>Circle Calculator</h1>
+    <div class="result" id="luas"></div>
+    <div class="result" id="keliling"></div>
+</body>
+</html>
